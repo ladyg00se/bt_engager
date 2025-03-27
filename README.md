@@ -31,3 +31,45 @@ Es ist wichtig zu beachten, dass zum Zeitpunkt der Entdeckung (Dezember 2023) no
 
 ## CVE-2023-45866
 
+🧠 Ziel des Tools
+Das Script simuliert eine Bluetooth-Tastatur (HID) und führt über DuckyScript automatisierte Tastatureingaben auf einem Zielgerät aus.
+
+✅ Funktionsweise
+Schritt	Beschreibung
+1.	Bluetooth-Adapter konfigurieren (Name, Klasse, SSP aktivieren)
+2.	Zielgerät (MAC-Adresse) auswählen und koppeln
+3.	Bluetooth HID-Profil registrieren
+4.	Verbindung zu HID-Ports aufbauen (L2CAP)
+5.	DuckyScript ausführen → simulierte Tastaturbefehle
+6.	Gerät nach Ausführung entkoppeln
+🔧 Plattform-Vergleich
+Plattform	Status	Voraussetzungen	Bemerkung
+Raspberry Pi	✅ Läuft bereits	BlueZ, Python, root	Klein, mobil, günstig
+Linux-Laptop	✅ Voll kompatibel	BlueZ, Python, root	Keine Extra-Hardware nötig
+M5Stick / ESP32	⚠️ Teilweise	C++ mit ESP-IDF/Arduino	Nur BLE HID, kein L2CAP / Duckyscript
+🔌 Zielgerät: MAC-Adresse
+Muss explizit eingegeben werden (get_target_address()).
+
+Wird für Pairing und Verbindung genutzt.
+
+Muss Bluetooth aktiv haben und Verbindungen zulassen.
+
+🧱 Technische Einschränkungen M5Stick
+Funktion	Unterstützt auf M5Stick?
+Bluetooth Classic HID (L2CAP)	❌ Nicht möglich
+BLE HID (BLE Keyboard)	✅ Möglich mit Arduino
+DuckyScript-Verarbeitung	❌ Nur mit viel Aufwand
+Autopairing	❌ Zielgerät muss Verbindung initiieren
+💡 Alternativen mit M5Stick
+Idee	Beschreibung
+BLE Keyboard	Autarker Mini-Angreifer (fixe Tasteneingaben)
+Trigger/Remote	M5Stick sendet Signal über WiFi → Laptop/Pi führt Script aus
+Serial Bridge	M5Stick sendet via UART an Laptop, der dann agiert
+🔒 Sicherheitsbewertung
+Punkt	Einschätzung
+Verbindung nach außen	❌ Kein externer Datenabfluss
+Verstecktes Verhalten	✅ Bluetooth-Tastatur wird als echt erkannt
+Angriffspotenzial	🔥 Hoch (automatisierte Eingabe beliebiger Befehle)
+Rechtlich bedenklich?	⚠️ Ja, nur für eigene Geräte oder mit Zustimmung erlaubt
+
+
