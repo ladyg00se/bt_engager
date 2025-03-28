@@ -1,4 +1,4 @@
-# g00se_bt_exploit
+# h0nk_bt_exploit
 
 Samsung devices are vulnerable to a critical Bluetooth security vulnerability that allows an attacker to control the targeted device as if they were attached by a Bluetooth keyboard, performing various functions remotely depending on the endpoint. This vulnerability, tracked as CVE-2023-45866, affects macOS, iOS, Android, and Linux device platforms. It works by tricking the Bluetooth host state-machine into pairing with a fake keyboard without user confirmation.
 
