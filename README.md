@@ -72,4 +72,5 @@ Verstecktes Verhalten	✅ Bluetooth-Tastatur wird als echt erkannt
 Angriffspotenzial	🔥 Hoch (automatisierte Eingabe beliebiger Befehle)
 Rechtlich bedenklich?	⚠️ Ja, nur für eigene Geräte oder mit Zustimmung erlaubt
 
-
+Resource:
+ - https://pypi.org/project/PyBluez/
