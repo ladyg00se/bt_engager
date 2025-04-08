@@ -74,3 +74,10 @@ Rechtlich bedenklich?	⚠️ Ja, nur für eigene Geräte oder mit Zustimmung erl
 
 Resource:
  - https://pypi.org/project/PyBluez/
+
+⚠️ Disclaimer
+The provided scripts and proof-of-concept code are intended solely for educational and private testing purposes. They must only be executed on devices that you own or have explicit permission to test.
+
+By using these scripts, you agree to take full responsibility for any actions taken. Unauthorized use on networks or devices you do not control may be illegal and is strictly prohibited.
+
+The author of this code is not liable for any damage, disruption, or legal consequences resulting from misuse. Always follow responsible disclosure and ethical testing guidelines.
